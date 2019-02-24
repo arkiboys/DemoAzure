@@ -1,0 +1,36 @@
+{
+	"name": "SourceDataset_9mp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "ID",
+				"type": "Int32"
+			},
+			{
+				"name": "First",
+				"type": "String"
+			},
+			{
+				"name": "Last",
+				"type": "String"
+			},
+			{
+				"name": "DOB",
+				"type": "Date"
+			},
+			{
+				"name": "LastModified",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[Contact]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

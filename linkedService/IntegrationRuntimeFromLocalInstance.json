@@ -1,0 +1,15 @@
+{
+	"name": "IntegrationRuntimeFromLocalInstance",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=.\\SQLEXPRESS;initial catalog=LocalDevelopment;user id=sa2",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzMTYzMGMxMy03MTM1LTQ3YjQtODE1ZC04MDYxMGEzYmU3N2QiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeFromLocalInstance",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

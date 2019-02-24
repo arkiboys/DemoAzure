@@ -1,0 +1,40 @@
+{
+	"name": "SourceDataset_ioc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "IntegrationRuntimeFromLocalInstance",
+			"type": "LinkedServiceReference"
+		},
+		"type": "SqlServerTable",
+		"structure": [
+			{
+				"name": "CustomerID",
+				"type": "String"
+			},
+			{
+				"name": "LastName",
+				"type": "String"
+			},
+			{
+				"name": "FirstName",
+				"type": "String"
+			},
+			{
+				"name": "Birthday",
+				"type": "Date"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "DateTime"
+			},
+			{
+				"name": "ModifiedOn",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[Customers]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
