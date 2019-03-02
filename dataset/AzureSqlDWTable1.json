@@ -5,6 +5,35 @@
 			"referenceName": "AzureSqlDW1",
 			"type": "LinkedServiceReference"
 		},
-		"type": "AzureSqlDWTable"
+		"type": "AzureSqlDWTable",
+		"structure": [
+			{
+				"name": "CustomerID",
+				"type": "String"
+			},
+			{
+				"name": "LastName",
+				"type": "String"
+			},
+			{
+				"name": "FirstName",
+				"type": "String"
+			},
+			{
+				"name": "Birthday",
+				"type": "Date"
+			},
+			{
+				"name": "CreatedOn",
+				"type": "DateTime"
+			},
+			{
+				"name": "ModifiedOn",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[StageCustomers]"
+		}
 	}
 }

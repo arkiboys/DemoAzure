@@ -1,0 +1,63 @@
+{
+	"name": "LoadADW",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_To_Stage_Cust",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"typeProperties": {
+					"source": {
+						"type": "SqlSource"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"allowPolyBase": true,
+						"writeBatchSize": 10000,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": true
+						}
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorage1",
+							"type": "LinkedServiceReference"
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"CustomerID": "CustomerID",
+							"LastName": "LastName",
+							"FirstName": "FirstName",
+							"Birthday": "Birthday",
+							"CreatedOn": "CreatedOn",
+							"ModifiedOn": "ModifiedOn"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_ioc",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlDWTable1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		]
+	}
+}
